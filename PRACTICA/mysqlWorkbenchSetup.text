@@ -1,0 +1,8 @@
+use twitter;
+INSERT INTO users (first_name, last_name, handle, birthday, created_at, updated_at)
+VALUES('Brenda', 'Huemer', 'brendx', '1998-01-19','NOW()', 'NOW()');
+SELECT * FROM users;
+UPDATE users
+SET created_at = 'DATETIME()', updated_at = 'DATETIME()'
+WHERE id = 6;
+DELETE FROM users WHERE id = 7;
