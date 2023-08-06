@@ -1,0 +1,38 @@
+INSERT INTO dojos (nombre, created_at, updated_at) VALUES('Dojo1',NOW(), NOW());
+INSERT INTO dojos (nombre, created_at, updated_at) VALUES('Dojo2',NOW(), NOW());
+INSERT INTO dojos (nombre, created_at, updated_at) VALUES('Dojo3',NOW(), NOW());
+DELETE FROM dojos WHERE id = 1;
+DELETE FROM dojos WHERE id = 2;
+DELETE FROM dojos WHERE id = 3;
+INSERT INTO dojos (nombre, created_at, updated_at) VALUES('Primer Dojo',NOW(), NOW());
+INSERT INTO dojos (nombre, created_at, updated_at) VALUES('Segundo Dojo',NOW(), NOW());
+INSERT INTO dojos (nombre, created_at, updated_at) VALUES('Tercer Dojo',NOW(), NOW());
+INSERT INTO ninjas (first_name, last_name, age, dojo_id, created_at, updated_at) VALUES('Daniel', 'Cho', 25, 4, NOW(), NOW());
+INSERT INTO ninjas (first_name, last_name, age, dojo_id, created_at, updated_at) VALUES('Mariela', 'Cano', 25, 4, NOW(), NOW());
+INSERT INTO ninjas (first_name, last_name, age, dojo_id, created_at, updated_at) VALUES('Yanina', 'Oconnor', 28, 4, NOW(), NOW());
+INSERT INTO ninjas (first_name, last_name, age, dojo_id, created_at, updated_at) VALUES('Marcos', 'Gimenez', 30, 5, NOW(), NOW());
+INSERT INTO ninjas (first_name, last_name, age, dojo_id, created_at, updated_at) VALUES('Tania', 'Melgarejo', 22, 5, NOW(), NOW());
+INSERT INTO ninjas (first_name, last_name, age, dojo_id, created_at, updated_at) VALUES('Carlos', 'Nuñez', 26, 5, NOW(), NOW());
+INSERT INTO ninjas (first_name, last_name, age, dojo_id, created_at, updated_at) VALUES('Adela', 'Speratti', 33, 6, NOW(), NOW());
+INSERT INTO ninjas (first_name, last_name, age, dojo_id, created_at, updated_at) VALUES('Benito', 'Pintos', 21, 6, NOW(), NOW());
+INSERT INTO ninjas (first_name, last_name, age, dojo_id, created_at, updated_at) VALUES('Mon', 'Laferte', 30, 6, NOW(), NOW());
+SELECT NOW();
+SELECT * FROM ninjas;
+select ninjas.first_name, ninjas.last_name, ninjas.age, dojos.id
+from dojos
+join ninjas on dojos.id = ninjas.dojo_id
+where dojos.id = 4;
+select ninjas.first_name, ninjas.last_name, ninjas.age, dojos.id
+from dojos
+join ninjas on dojos.id = ninjas.dojo_id
+where dojos.id = 4;
+select ninjas.first_name, ninjas.last_name, ninjas.age, dojos.id
+from dojos
+join ninjas on dojos.id = ninjas.dojo_id
+where dojos.id = 6;
+select dojos.id, dojos.nombre, ninjas.first_name, ninjas.last_name, ninjas.age
+from dojos
+join ninjas on dojos.id = ninjas.dojo_id
+where dojos.id = 4;
+SELECT * FROM dojos
+WHERE dojos.id = (SELECT dojo_id FROM ninjas ORDER BY dojo_id DESC LIMIT 1);

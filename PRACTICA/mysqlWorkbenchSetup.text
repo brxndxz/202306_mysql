@@ -6,3 +6,13 @@ UPDATE users
 SET created_at = 'DATETIME()', updated_at = 'DATETIME()'
 WHERE id = 6;
 DELETE FROM users WHERE id = 7;
+INSERT INTO dojos (nombre, created_at, updated_at) VALUES('Dojo1','NOW()', 'NOW()');
+INSERT INTO dojos (nombre, created_at, updated_at) VALUES('Dojo2','NOW()', 'NOW()');
+INSERT INTO dojos (nombre, created_at, updated_at) VALUES('Dojo3','NOW()', 'NOW()');
+DELETE FROM dojos WHERE id = 1 AND id = 2 AND id = 3;
+INSERT INTO dojos (nombre, created_at, updated_at) VALUES('Primer Dojo','NOW()', 'NOW()');
+INSERT INTO dojos (nombre, created_at, updated_at) VALUES('Segundo Dojo','NOW()', 'NOW()');
+INSERT INTO dojos (nombre, created_at, updated_at) VALUES('Tercer Dojo','NOW()', 'NOW()');
+INSERT INTO dojos (first_name, last_name, age, dojo_id, created_at, updated_at) VALUES('Daniel', 'Cho', 25, 1, 'NOW()', 'NOW()');
+SELECT NOW();
+SELECT * FROM dojos;
